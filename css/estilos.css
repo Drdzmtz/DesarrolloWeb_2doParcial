@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+	padding: 10px;
+	margin: 0 15px 0 15px;
+	border-bottom: solid 1px lightgray;
+}
+
+#btn-add, .btn-update, .btn-remove {
+	cursor: pointer;
+}
+
+#btn-add {
+	font-size: 30px;
+	display: block;
+	text-align: center;
+	user-select: none;
+}
+
+#btn-add:hover {
+	color: green;
+}
+
+.btn-update:hover {
+	color: blue;
+}
+
+.btn-remove:hover {
+	color: red;
+}
+
+.tb-tickets {
+	padding: 20px;
+}
+
+.tb-tickets tr td:last-child {
+	text-align: center;
+	user-select: none;
+}
+
+form {
+	margin: 30px;
+}
+
+form label {
+	display: inline-block;
+	margin: 5px 0 5px 5px;
+	font-weight: bold;
+}
+
+form input,
+form select {
+	display: block;
+	padding: 5px;
+	border-radius: 5px;
+	border: solid 1px lightgray;
+	width: calc(100% - 30px);
+}
+
+form input:focus,
+form select:focus {
+	background-color: rgb(255, 255, 196);
+}
+
+form button {
+	display: block;
+	font-weight: bold;
+	padding: 10px;
+	margin: 10px auto;
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+
+form button:hover {
+	cursor: pointer;
+	background-color: rgb(0, 190, 0);
+}
+
+form button:focus {
+	transform: scale(0.9);
+}
+
+.img-group {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	animation: a-show 1s linear 0;
+}
+
+@media screen and (min-width: 767px) {
+	form {
+		text-align: center;
+	}
+
+	.f-group {
+		display: inline-block;
+		text-align: center;
+		width: calc(50% - 30px);
+	}
+
+	.f-group.f-group-3 {
+		width: calc(30% - 5px);
+	}
+
+	form label {
+		width: 100%;
+		padding: 5px;
+	}
+}
+
+@keyframes a-show {
+	from {
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(100%);
+	}
+}
