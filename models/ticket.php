@@ -18,7 +18,7 @@ class Ticket {
 
 	public function __toString() {
 		return
-		"ID       = $this->id,
+		"ID      = $this->id,
 		TNAME    = $this->$tname,
 		CURP     = $this->$CURP,
 		NAME     = $this->$name,

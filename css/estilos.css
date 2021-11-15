@@ -85,6 +85,34 @@ form button:focus {
 	transform: scale(0.9);
 }
 
+
+.login{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	border-radius: 10%;
+	padding: 2%;
+    background-color: #f8f9fa;
+}
+
+.login:hover{
+	background-color: #c6c9cc;
+}
+
+.title{
+	align-self: center;
+	font-weight: bold;
+	font-size: larger;
+	color: black;
+
+}
+
+.title_views{
+	background-color: #f8f9fa;
+}
+
 .img-group {
 	text-align: center;
 }
@@ -95,6 +123,14 @@ form button:focus {
 
 .show {
 	animation: a-show 1s linear 0;
+}
+
+.captcha {
+	align-items: center;
+}
+
+.captcha-input {
+    width: 50%;
 }
 
 @media screen and (min-width: 767px) {
