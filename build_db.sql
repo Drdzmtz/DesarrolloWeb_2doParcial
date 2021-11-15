@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `tickets` (
   `MAIL` varchar(50) DEFAULT NULL,
   `LEVEL` varchar(50) DEFAULT NULL,
   `CITY` varchar(50) DEFAULT NULL,
-  `SUBJECT` enum('Comprobante','Consulta','Quejas','Otro') NOT NULL DEFAULT 'Otro',
+  `SUBJECT` enum('Tutorias', 'Comprobante de estudios','Consulta','Quejas','Otro') NOT NULL DEFAULT 'Otro',
   `STATUS` enum('Sin atender','Atendiendo','Atendido','Cancelado') NOT NULL DEFAULT 'Sin atender',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;

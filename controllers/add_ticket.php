@@ -29,6 +29,7 @@ $r = $db->insert(new Ticket(
 	getData("f-level"),
 	getData("f-city"),
 	getData("f-subj"),
+	getData("f-status")
 ));
 
 if(gettype($r) === "string")

@@ -87,8 +87,9 @@
 		<div class="f-group">
 			<label for="f-subj">Seleccione el asunto que va a tratar</label>
 			<select name="f-subj">
-				<option value="Tutorias">Tutorías</option>
+				<option value="Tutorias">Tutorias</option>
 				<option value="Comprobante de estudios">Comprobante de estudios</option>
+				<option value="Consulta">Consulta</option>
 				<option value="Quejas">Quejas</option>
 				<option value="-">Otro</option>
 			</select>
@@ -102,6 +103,7 @@
 		</div>
 
 		<input type="hidden" id="f-id" value="">
+
 	</form>
 
 	<!-- Tickets -->
@@ -122,6 +124,7 @@
 					<th>Nivel</th>
 					<th>Ciudad</th>
 					<th>Asunto</th>
+					<th>Estatus</th>
 					<th>Opciones</th>
 				</tr>
 			</thead>

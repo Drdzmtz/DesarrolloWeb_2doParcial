@@ -37,6 +37,7 @@ window.addEventListener('load', () => {
 			{ data: 'level'     },
 			{ data: 'city'      },
 			{ data: 'subject'   },
+			{ data: 'status'   },
 			{ data: 'options'   },
 		]
 	});
@@ -74,6 +75,7 @@ window.addEventListener('load', () => {
 			async: true,
 			data: {
 				'f-id': id,
+				'f-status': "Sin Atender",
 				...get_data()
 			},
 			success(res) {
@@ -85,6 +87,7 @@ window.addEventListener('load', () => {
 				reload();
 			},
 			error(xhr, status, error) {
+
 				alert(error);
 			}
 		});
@@ -141,7 +144,7 @@ const get_data = () => {
 	]
 	.forEach(name =>
 		obj[name] = document.querySelector(`[name=${name}]`).value);
-
+	
 	return obj;
 }
 

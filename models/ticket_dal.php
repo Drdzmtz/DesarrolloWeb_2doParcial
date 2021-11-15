@@ -48,15 +48,16 @@ class TicketDAL {
 				'$ticket->lpname'   ,
 				'$ticket->lmname'   ,
 				'$ticket->telephone',
-				'$ticket->celphone' ,
+				'$ticket->celphone'	 ,
 				'$ticket->mail'     ,
 				'$ticket->level'    ,
 				'$ticket->city'     ,
-				'$ticket->subject'  
+				'$ticket->subject'  ,
+				'$ticket->status'	
 			)"
 		);
-
-		return $r ? true : 'Is not possible add the ticket';
+		
+		return $r ? true : $this->db->error;
 	}
 
 	public function update($ticket) {
@@ -111,7 +112,8 @@ class TicketDAL {
 				MAIL,
 				`LEVEL`,
 				CITY,
-				`SUBJECT`
+				`SUBJECT`,
+				`STATUS`
 			FROM tickets
 			WHERE ID=$id"
 		);
@@ -130,7 +132,8 @@ class TicketDAL {
 			$r['MAIL'],
 			$r['LEVEL'],
 			$r['CITY'],
-			$r['SUBJECT']
+			$r['SUBJECT'],
+			$r['STATUS']
 		);
 
 		return null;
@@ -152,7 +155,8 @@ class TicketDAL {
 				MAIL,
 				`LEVEL`,
 				CITY,
-				`SUBJECT`
+				`SUBJECT`,
+				`STATUS`
 			FROM tickets
 			WHERE `STATUS`='$status'"
 		);
@@ -173,7 +177,8 @@ class TicketDAL {
 				$r['MAIL'],
 				$r['LEVEL'],
 				$r['CITY'],
-				$r['SUBJECT']
+				$r['SUBJECT'],
+				$r['STATUS']
 			);
 		}
 
@@ -196,7 +201,8 @@ class TicketDAL {
 				MAIL,
 				`LEVEL`,
 				CITY,
-				`SUBJECT`
+				`SUBJECT`,
+				`STATUS`
 			FROM tickets"
 		);
 
@@ -216,7 +222,8 @@ class TicketDAL {
 				$r['MAIL'],
 				$r['LEVEL'],
 				$r['CITY'],
-				$r['SUBJECT']
+				$r['SUBJECT'],
+				$r['STATUS']
 			);
 		}
 

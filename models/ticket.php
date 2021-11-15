@@ -13,6 +13,7 @@ class Ticket {
 	public  $level;
 	public  $city;
 	public  $subject;
+	public 	$status;
 	
 	public function __construct(
 		int    $id,
@@ -26,7 +27,8 @@ class Ticket {
 		string $mail,
 		string $level,
 		string $city,
-		string $subject
+		string $subject,
+		string $status
 	) {
 		$this->id        = $id;
 		$this->tname     = $tname;
@@ -40,6 +42,7 @@ class Ticket {
 		$this->level     = $level;
 		$this->city      = $city;
 		$this->subject   = $subject;
+		$this->status	 = $status;
 	}
 
 	public function __toString() {
@@ -55,7 +58,8 @@ class Ticket {
 		MAIL     = $this-> mail,
 		LEVEL    = $this-> level,
 		CITY     = $this-> city,
-		SUBJECT  = $this-> subject";
+		SUBJECT  = $this-> subject,
+		STATUS   = $this-> status";
 	}
 }
 
