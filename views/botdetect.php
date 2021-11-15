@@ -11,20 +11,20 @@ if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 // 1. define BotDetect paths
 
 // physical path to Captcha library files (the BotDetect folder)
-$BDC_Include_Path = __DIR__ . '/botdetect/';
+$BDC_Include_Path = __DIR__ . '../lib/botdetect/';
 
 // BotDetect Url prefix (base Url of the BotDetect public resources)
-$BDC_Url_Root = 'botdetect/public/';
+$BDC_Url_Root = '../lib/botdetect/public/';
 
 // physical path to the folder with the (optional!) config override file
 $BDC_Config_Override_Path = __DIR__;
 
 
 // normalize paths
-if (is_file(__DIR__ . '/botdetect/CaptchaIncludes.php')) {
+if (is_file(__DIR__ . '/../lib/botdetect/CaptchaIncludes.php')) {
   // in case a local copy of the library exists, it is always used
-  $BDC_Include_Path = __DIR__ . '/botdetect/';
-  $BDC_Url_Root = 'botdetect/public/';
+  $BDC_Include_Path = __DIR__ . '/../lib/botdetect/';
+  $BDC_Url_Root = '../lib/botdetect/public/';
 } else {
   // clean-up path specifications
   $BDC_Include_Path = BDC_NormalizePath($BDC_Include_Path);

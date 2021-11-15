@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 	$('#tickets').DataTable({
 		searching: true,
 		ajax: {
-			url: 'controllers/get_tickets.php',
+			url: '../controllers/get_tickets.php',
 			dataSrc: dt => {
 				if (dt.error) {
 					console.log(dt.error);
@@ -69,7 +69,7 @@ window.addEventListener('load', () => {
 		const id = document.getElementById('f-id').value;
 
 		$.ajax({
-			url: `controllers/${(id) ? 'update' : 'add' }_ticket.php`,
+			url: `../controllers/${(id) ? 'update' : 'add' }_ticket.php`,
 			type: 'POST',
 			async: true,
 			data: {
@@ -174,7 +174,7 @@ const reload = () => {
 
 const updateAction = ev => {
 	$.ajax({
-		url: 'controllers/get_tickets.php',
+		url: '../controllers/get_tickets.php',
 		type: 'GET',
 		async: true,
 		data: {
@@ -217,7 +217,7 @@ const updateAction = ev => {
 
 const removeAction = ev => {
 	$.ajax({
-		url: 'controllers/del_ticket.php',
+		url: '../controllers/del_ticket.php',
 		type: 'POST',
 		async: true,
 		data: {

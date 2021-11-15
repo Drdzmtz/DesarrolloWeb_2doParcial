@@ -9,12 +9,12 @@
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="../css/estilos.css">
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" defer></script>
 	
-	<script type="module" src="js/index.js" defer></script>
+	<script type="module" src="../js/index.js" defer></script>
 </head>
 <body>
 
@@ -22,8 +22,7 @@
 		<h1> Ticket de Turno</h1>
 	</div>
 
-	<?php include_once("./views/navbar.php"); ?>
-
+	<?php // include_once("../views/navbar.php"); ?>
 
 	<!-- Formulario -->
 	<form id="data" method="post" class="hidden">
@@ -98,8 +97,8 @@
 		<button class="btn btn-ss" type="submit">Generar Turno</button>
 
 		<div class="img-group">
-			<img src="images/cbarras.png" alt="Código de barras">
-			<img src="images/cqr.png" alt="Código QR">
+			<img src="../images/cbarras.png" alt="Código de barras">
+			<img src="../images/cqr.png" alt="Código QR">
 		</div>
 
 		<input type="hidden" id="f-id" value="">
