@@ -27,7 +27,7 @@ class TicketDAL {
 		);
 
 		if ($db->connect_errno) {
-			$this->cnx_err = $mysqli->connect_error;
+			$this->cnx_err = $db->connect_error;
 			return $this->cnx_err;
 		}
 		
@@ -37,7 +37,7 @@ class TicketDAL {
 	}
 
 	public function insert($ticket) {
-		if ($this->cnx_err !== null) return $this->cnx_err;
+		if ($this->db === null) return $this->cnx_err;
 
 		$r = $this->db->query(
 			"INSERT INTO tickets VALUES (
@@ -60,7 +60,7 @@ class TicketDAL {
 	}
 
 	public function update($ticket) {
-		if ($this->cnx_err !== null) return $this->cnx_err;
+		if ($this->db === null) return $this->cnx_err;
 
 		$r = $this->db->query(
 			"UPDATE tickets SET
@@ -82,7 +82,7 @@ class TicketDAL {
 	}
 
 	public function delete($id) {
-		if ($this->cnx_err !== null) return $this->cnx_err;
+		if ($this->db === null) return $this->cnx_err;
 
 		$r = $this->db->query(
 			"DELETE FROM tickets WHERE ID=$id"
@@ -96,7 +96,7 @@ class TicketDAL {
 	}
 
 	public function getById($id) {
-		if ($this->cnx_err !== null) return $this->cnx_err;
+		if ($this->db === null) return $this->cnx_err;
 
 		$data = $this->db->query(
 			"SELECT
@@ -137,7 +137,7 @@ class TicketDAL {
 	}
 
 	public function getAll() {
-		if ($this->cnx_err !== null) return $this->cnx_err;
+		if ($this->db === null) return $this->cnx_err;
 
 		$data = $this->db->query(
 			"SELECT
