@@ -136,6 +136,50 @@ class TicketDAL {
 		return null;
 	}
 
+	public function getAllByStatus($status) {
+		if ($this->db === null) return $this->cnx_err;
+
+		$data = $this->db->query(
+			"SELECT
+				ID,          
+				TNAME,
+				CURP,
+				`NAME`,
+				LPNAME,
+				LMNAME,
+				TELEPHONE,
+				CELPHONE,
+				MAIL,
+				`LEVEL`,
+				CITY,
+				`SUBJECT`
+			FROM tickets
+			WHERE `STATUS`='$status'"
+		);
+
+		if (!$data) return $this->db->error;
+
+		$results = array();
+		while ($r = $data->fetch_array()) {
+			$results[] = new Ticket(
+				$r['ID'],
+				$r['TNAME'],
+				$r['CURP'],
+				$r['NAME'],
+				$r['LPNAME'],
+				$r['LMNAME'],
+				$r['TELEPHONE'],
+				$r['CELPHONE'],
+				$r['MAIL'],
+				$r['LEVEL'],
+				$r['CITY'],
+				$r['SUBJECT']
+			);
+		}
+
+		return $results;
+	}
+
 	public function getAll() {
 		if ($this->db === null) return $this->cnx_err;
 
