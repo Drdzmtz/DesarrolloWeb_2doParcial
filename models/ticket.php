@@ -16,7 +16,7 @@ class Ticket {
 	public 	$status;
 	
 	public function __construct(
-		int    $id,
+		string    $id,
 		string $tname,
 		string $CURP,
 		string $name,

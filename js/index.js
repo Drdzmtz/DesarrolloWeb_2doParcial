@@ -99,49 +99,32 @@ window.addEventListener('load', () => {
 			async: true,
 			data: {
 				'f-id': id,
-				'f-status': "Sin Atender",
-				...get_data()
+				'f-status': 'Sin Atender',
+				...get_data(),
 			},
 			success(res) {
 				const r = JSON.parse(res);
+				console.log(res);
+
+				document.getElementById('f-id').value = r.success.id;
 
 				if (r.error)
 					alert(r.error);
 
-				reload();
+				var obj = get_data();
+				var new_id = document.getElementById('f-id').value;
+		
+				const url = `../controllers/get_pdf.php?f-id=${new_id}`
+		
+				window.open(url, "_blank");
+				reloadTable();
+				clearData();
 			},
 			error(xhr, status, error) {
 
 				alert(error);
 			}
 		});
-
-		if (!res_ticket.error){
-			$.ajax({
-				url: `../controllers/get_pdf.php`,
-				type: 'POST',
-				async: true,
-				data: {
-					'f-id': id,
-					'f-status': "Sin Atender",
-					...get_data()
-				},
-				success(res) {
-					const r = JSON.parse(res);
-	
-					if (r.error)
-						alert(r.error);
-	
-					reload();
-				},
-				error(xhr, status, error) {
-	
-					alert(error);
-				}
-			});
-	
-		}
-
 	});
 
 	document.getElementById('btn-add').addEventListener('click', ev => {
@@ -156,7 +139,7 @@ window.addEventListener('load', () => {
 		edata.className = 'hidden';
 		ev.target.innerText = 'add_circle';
 
-		clearData();
+		//clearData();
 	});
 });
 
@@ -215,15 +198,17 @@ const clearData = () => {
 };
 
 const reload = () => {
+	reloadTable();
+	clearData();
+};
+
+const reloadTable = () => {
 	$('#tickets').DataTable().ajax.reload();
 
 	// close panel info
 	const dataPanel = document.getElementById('data');
 	if (dataPanel.className === 'show')
 		document.getElementById('btn-add').click();
-
-	// clear values
-	clearData();
 };
 
 const updateAction = ev => {

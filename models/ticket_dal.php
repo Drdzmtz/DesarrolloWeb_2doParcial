@@ -56,8 +56,11 @@ class TicketDAL {
 				'$ticket->status'	
 			)"
 		);
+
+		$last_id = $this->db->insert_id;
+		$result = array("success" => True, "id" => $last_id);
 		
-		return $r ? true : $this->db->error;
+		return $r ? $result : $this->db->error;
 	}
 
 	public function update($ticket) {
