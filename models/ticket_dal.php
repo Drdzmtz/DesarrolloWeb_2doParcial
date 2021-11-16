@@ -79,10 +79,11 @@ class TicketDAL {
 				`LEVEL`    = '$ticket->level'    ,
 				`CITY`     = '$ticket->city'     ,
 				`SUBJECT`  = '$ticket->subject'  ,
-				`STATUS`   = '$ticket->status'	 ,
+				`STATUS`   = '$ticket->status'	 
 			WHERE ID=$ticket->id"
 		);
 
+		return $r ? true : $this->db->error;
 		return $r ? true : 'Is not possible update the ticket';
 	}
 
@@ -132,6 +133,52 @@ class TicketDAL {
 				`STATUS`
 			FROM tickets
 			WHERE ID=$id"
+		);
+
+		if (!$data) return $this->db->error;
+		
+		if ($r = $data->fetch_array()) return new Ticket(
+			$r['ID'],
+			$r['TNAME'],
+			$r['CURP'],
+			$r['NAME'],
+			$r['LPNAME'],
+			$r['LMNAME'],
+			$r['TELEPHONE'],
+			$r['CELPHONE'],
+			$r['MAIL'],
+			$r['LEVEL'],
+			$r['CITY'],
+			$r['SUBJECT'],
+			$r['STATUS']
+		);
+
+		return null;
+	}
+
+	public function getByCURP($id, $curp) {
+		if ($this->db === null) return $this->cnx_err;
+
+		$data = $this->db->query(
+			"SELECT
+				ID,
+				TNAME,
+				CURP,
+				`NAME`,
+				LPNAME,
+				LMNAME,
+				TELEPHONE,
+				CELPHONE,
+				MAIL,
+				`LEVEL`,
+				CITY,
+				`SUBJECT`,
+				`STATUS`
+			FROM tickets
+			WHERE
+				ID       =  $id            AND
+				CURP     = '$curp'         AND
+				`STATUS` = 'Sin atender'"
 		);
 
 		if (!$data) return $this->db->error;

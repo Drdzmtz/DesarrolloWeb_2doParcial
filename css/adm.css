@@ -23,16 +23,6 @@ h6 {
 	width: 200px;
 }
 
-.selected, .btn-tb:hover {
-	color: rgb(1, 129, 1);
-	transform: scale(1.1);
-}
-
-.tb-filters label {
-	font-size: 12px;
-	display: block;
-}
-
 .tr-hidden {
 	display: none;
 }
