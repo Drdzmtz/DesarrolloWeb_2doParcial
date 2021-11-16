@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
         $r = Session::login($_POST['username'], $_POST['password']);
 
         if($r === true)
-            header('Location: ticket.php');
+            header('Location: adm.php');
 
         echo '<div style="text-align: center; color: red; font-weight: bold;">' . $r . '</div>';
     }

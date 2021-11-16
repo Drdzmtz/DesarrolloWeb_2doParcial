@@ -1,18 +1,16 @@
 window.addEventListener('load', () => {
 
     document.getElementById('btn-login').addEventListener('click', ev => {
-        window.open('../views/login.php', "_blank")
-    
+        window.location.href = '../views/login.php';    
     });
     
     document.getElementById('btn-ticket').addEventListener('click', ev => {
-        window.open('../views/ticket.php', "_blank")
+        window.location.href = '../views/ticket.php';
     
     });
 
     document.getElementById('btn-admin').addEventListener('click', ev => {
-        window.open('../views/adm.php', "_blank")
-    
+        window.location.href = '../views/adm.php';
     });
 
 });

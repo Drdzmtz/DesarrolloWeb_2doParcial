@@ -23,7 +23,6 @@ class Session {
 		);
 		
 		if(!$data){
-			echo $db->error;			
 			return 'Usuario o contraseña incorrecta';
 		}
 
