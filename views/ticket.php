@@ -57,26 +57,30 @@
 			</div>
 		</div>
 
-		<table id="tickets">
-			<thead>
-				<tr>
-					<th>Tramitante</th>
-					<th>CURP</th>
-					<th>Nombre</th>
-					<th>A. Paterno</th>
-					<th>A. Materno</th>
-					<th>Teléfono</th>
-					<th>Celular</th>
-					<th>Correo</th>
-					<th>Nivel</th>
-					<th>Ciudad</th>
-					<th>Asunto</th>
-					<th>Estatus</th>
-					<th>Opciones</th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
+		<div style="overflow-x:auto;">
+			<table id="tickets">
+				<thead>
+					<tr>
+						<th>Tramitante</th>
+						<th>CURP</th>
+						<th>Nombre</th>
+						<th>A. Paterno</th>
+						<th>A. Materno</th>
+						<th>Teléfono</th>
+						<th>Celular</th>
+						<th>Correo</th>
+						<th>Nivel</th>
+						<th>Ciudad</th>
+						<th>Asunto</th>
+						<th>Estatus</th>
+						<th>Opciones</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+
+	
 	</div>
 
 	<!-- Formulario -->
