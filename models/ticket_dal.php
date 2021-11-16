@@ -82,6 +82,18 @@ class TicketDAL {
 		return $r ? true : 'Is not possible update the ticket';
 	}
 
+	public function updatestatus($ticket) {
+		if ($this->db === null) return $this->cnx_err;
+
+		$r = $this->db->query(
+			"UPDATE tickets SET
+				`SUBJECT`  = '$ticket->subject'   
+			WHERE ID=$ticket->id"
+		);
+
+		return $r ? true : 'Is not possible update status of the ticket';
+	}
+
 	public function delete($id) {
 		if ($this->db === null) return $this->cnx_err;
 
