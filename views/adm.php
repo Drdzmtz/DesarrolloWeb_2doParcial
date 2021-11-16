@@ -1,3 +1,9 @@
+<?php
+require_once('../models/session.php');
+
+Session::isOpenOrView();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +24,11 @@
 	<script type="module" src="../js/adm.js" defer></script>
 </head>
 <body class="p-3 mb-2 bg-secondary bg-gradient">
+	<?php include_once("../views/navbar.php"); ?>
 
 	<div class="title_views">
 		<h1>Turnos</h1>
 	</div>
-	
-	<?php include_once("../views/navbar.php"); ?>
 
 	<div class="container-fluid text-center text-dark">
 		<h6> En esta pantalla puedes editar el estatus de los tickets, no es posible borrarlos para mantener un buen historial. </h6>

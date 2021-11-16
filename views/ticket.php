@@ -18,6 +18,7 @@
 	<script type="module" src="../js/ticket.js" defer></script>
 </head>
 <body>
+	<?php include_once('navbar.php'); ?>
 
 	<div class="title_views">
 		<h1> Ticket de Turno</h1>
