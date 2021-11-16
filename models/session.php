@@ -22,9 +22,14 @@ class Session {
 			WHERE `USERNAME`='$username' AND `PASSWORD`=MD5('$password')"
 		);
 		
+		if(!$data){
+			echo $db->error;			
+			return 'Usuario o contraseña incorrecta';
+		}
+
 		$r = $data->fetch_array();
 		if (!$r)
-			return 'the username or password is not correct';
+			return 'Usuario o contraseña incorrecta';
 
 		$_SESSION['username'] = $r['USERNAME'];
 		$_SESSION['name']     = $r['NAME'];

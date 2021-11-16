@@ -10,7 +10,7 @@ if (isset($_POST['login'])) {
     $isHuman = $Captcha->Validate();
 
     if (!$isHuman) {
-        echo '<div style="text-align: center; color: red; font-weight: bold;">Incorrect code</div>';
+        echo '<div style="text-align: center; color: red; font-weight: bold;">Captcha incorrecto</div>';
     } else {
         $r = Session::login($_POST['username'], $_POST['password']);
 
