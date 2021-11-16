@@ -1,17 +1,23 @@
-<?php session_start(); ?>
-<?php require("botdetect.php"); ?>
 <?php
-$Captcha = new Captcha("LoginCaptcha");
+require_once('botdetect.php');
+require_once('../models/session.php');
 
-if ($_POST) { 
+Session::logout();
+
+$Captcha = new Captcha('LoginCaptcha');
+
+if (isset($_POST['login'])) {
     $isHuman = $Captcha->Validate();
 
     if (!$isHuman) {
-        echo "<span>Incorrect code</span>";
+        echo '<div style="text-align: center; color: red; font-weight: bold;">Incorrect code</div>';
     } else {
-        
-        header("Location: ticket.php");
-        echo "<span>CORRECT code</span>";
+        $r = Session::login($_POST['username'], $_POST['password']);
+
+        if($r === true)
+            header('Location: ticket.php');
+
+        echo '<div style="text-align: center; color: red; font-weight: bold;">' . $r . '</div>';
     }
 }
 ?>
@@ -51,7 +57,7 @@ if ($_POST) {
                             <label for="f-captcha" > Captcha </label>
 
                             <?php
-                                $Captcha->UserInputID = "f-captcha";
+                                $Captcha->UserInputID = 'f-captcha';
                                 echo $Captcha->Html(); 
                             ?>
 
@@ -63,7 +69,7 @@ if ($_POST) {
                         </div>
 
                         <br />
-                        <button name="Login" name="login-btn" class="btn btn-primary"> Login </button>
+                        <button name="login" class="btn btn-primary"> Login </button>
                     </form>
                 </div>
         </div>
