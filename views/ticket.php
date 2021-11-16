@@ -23,13 +23,6 @@
 		<h1> Ticket de Turno</h1>
 	</div>
 
-<<<<<<< HEAD
-	<?php include_once("../views/navbar.php"); ?>
-
-	<!-- Formulario -->
-	<div>
-	<form id="data" method="post" class="hidden">
-=======
 	<div class="tb-filters">
 		<label>¿Ya cuentas con un turno? Consúltalo aquí</label>
 
@@ -89,7 +82,6 @@
 	<form id="data" method="post">
 		<hr>
 
->>>>>>> f-gui-ticket
 		<div class="f-group">
 			<label for="f-tname" class="rojo">Nombre completo de quien realizará el trámite:</label>
 			<input type="text" id="f-tname" name="f-tname" autofocus>
@@ -168,36 +160,5 @@
 
 		<input type="hidden" id="f-id" value="">
 	</form>
-<<<<<<< HEAD
-
-	</div>
-	
-	<!-- Tickets -->
-	<div class="tb-tickets">
-		<i id="btn-add" class="material-icons">add_circle</i>
-
-		<table id="tickets">
-			<thead>
-				<tr>
-					<th>Tramitante</th>
-					<th>CURP</th>
-					<th>Nombre</th>
-					<th>A. Paterno</th>
-					<th>A. Materno</th>
-					<th>Teléfono</th>
-					<th>Celular</th>
-					<th>Correo</th>
-					<th>Nivel</th>
-					<th>Ciudad</th>
-					<th>Asunto</th>
-					<th>Estatus</th>
-					<th>Opciones</th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
-	</div>
-=======
->>>>>>> f-gui-ticket
 </body>
 </html>
