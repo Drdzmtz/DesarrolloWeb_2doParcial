@@ -22,6 +22,8 @@
 	<div class="title_views">
 		<h1>Turnos</h1>
 	</div>
+	
+	<?php include_once("../views/navbar.php"); ?>
 
 	<div class="container-fluid text-center text-dark">
 		<h6> En esta pantalla puedes editar el estatus de los tickets, no es posible borrarlos para mantener un buen historial. </h6>

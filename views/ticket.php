@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	
 	<link rel="stylesheet" href="../css/estilos.css">
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
@@ -22,9 +23,10 @@
 		<h1> Ticket de Turno</h1>
 	</div>
 
-	<?php // include_once("../views/navbar.php"); ?>
+	<?php include_once("../views/navbar.php"); ?>
 
 	<!-- Formulario -->
+	<div>
 	<form id="data" method="post" class="hidden">
 		<div class="f-group">
 			<label for="f-tname" class="rojo">Nombre completo de quien realizará el trámite:</label>
@@ -106,6 +108,8 @@
 
 	</form>
 
+	</div>
+	
 	<!-- Tickets -->
 	<div class="tb-tickets">
 		<i id="btn-add" class="material-icons">add_circle</i>
