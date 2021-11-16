@@ -75,20 +75,21 @@ class TicketDAL {
 				`MAIL`     = '$ticket->mail'     ,
 				`LEVEL`    = '$ticket->level'    ,
 				`CITY`     = '$ticket->city'     ,
-				`SUBJECT`  = '$ticket->subject'   
+				`SUBJECT`  = '$ticket->subject'  ,
+				`STATUS`   = '$ticket->status'	 ,
 			WHERE ID=$ticket->id"
 		);
 
 		return $r ? true : 'Is not possible update the ticket';
 	}
 
-	public function updatestatus($ticket) {
+	public function updateStatus($id, $status) {
 		if ($this->db === null) return $this->cnx_err;
 
 		$r = $this->db->query(
 			"UPDATE tickets SET
-				`SUBJECT`  = '$ticket->subject'   
-			WHERE ID=$ticket->id"
+				`STATUS`  = '$status'   
+			WHERE ID=$id"
 		);
 
 		return $r ? true : 'Is not possible update status of the ticket';
