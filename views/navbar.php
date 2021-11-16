@@ -11,7 +11,7 @@
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#" target="_blank"><i id="btn-login" class="material-icons">account_circle</i> <span class="descripcion"> Login </span></a>
+      <a class="nav-item nav-link" href="#" target="_blank"><i id="btn-login" class="material-icons">exit_to_app</i> <span class="descripcion"> Cerrar sesion </span></a>
       <a class="nav-item nav-link" href="#" target="_blank"><i id="btn-ticket" class="material-icons">add_to_queue</i><span class="descripcion">Tickets
       </span></a>
       <a class="nav-item nav-link" href="#" target="_blank"><i id="btn-admin" class="material-icons">settings</i><span class="descripcion">Administracion</span></a>
