@@ -3,7 +3,8 @@
 require_once('../models/results.php');
 require_once('../models/ticket_dal.php');
 
-$id = isset($_GET['id']) ? $_GET['id'] : false;
+$id     = isset($_GET['id'])        ? $_GET['id']        : false;
+$filter = isset($_GET['ft-status']) ? $_GET['ft-status'] : false;
 
 $db = new TicketDAL();
 $db->connect();
@@ -17,8 +18,10 @@ if ($id !== false) { // get once
 	Result::success($r);
 }
 
-// get all
-$r = $db->getAll();
+// get all or filtered
+if ($filter !== false) $r = $db->getAllByStatus($filter);
+else                   $r = $db->getAll();
+
 if(gettype($r) === "string")
 	Result::error($r);
 

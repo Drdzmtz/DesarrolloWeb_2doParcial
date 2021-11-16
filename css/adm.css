@@ -1,0 +1,38 @@
+
+.title_views {
+	border-radius: 5px;
+}
+
+.tb-tickets {
+	background-color: aliceblue;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+h6 {
+	color: white;
+	font-style: italic;
+	font-weight: normal;
+	margin: 10px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+	background-color: white;
+	padding: 2.5px;
+	font-size: 14px;
+	width: 200px;
+}
+
+.selected, .btn-tb:hover {
+	color: rgb(1, 129, 1);
+	transform: scale(1.1);
+}
+
+.tb-filters label {
+	font-size: 12px;
+	display: block;
+}
+
+.tr-hidden {
+	display: none;
+}

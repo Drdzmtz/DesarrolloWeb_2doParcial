@@ -9,11 +9,17 @@ h1 {
 	border-bottom: solid 1px lightgray;
 }
 
-#btn-add, .btn-update, .btn-remove {
+.tb-filters {
+	text-align: center;
+	margin-bottom: 5px;
+	user-select: none;
+}
+
+#btn-add, .btn-tb, .btn-update, .btn-remove {
 	cursor: pointer;
 }
 
-#btn-add {
+#btn-add, .btn-tb {
 	font-size: 30px;
 	display: block;
 	text-align: center;
@@ -22,6 +28,10 @@ h1 {
 
 #btn-add:hover {
 	color: green;
+}
+
+.btn-tb {
+	display: inline-block;
 }
 
 .btn-update:hover {
