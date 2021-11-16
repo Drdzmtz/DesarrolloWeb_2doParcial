@@ -16,15 +16,19 @@
 	
 	<script type="module" src="../js/adm.js" defer></script>
 </head>
-<body>
+<body class="p-3 mb-2 bg-secondary bg-gradient">
 
 	<div class="title_views">
-		<h1> Ticket de Turno</h1>
+		<h1>Vista de administrador</h1>
+	</div>
+
+	<div class="container-fluid text-center text-dark">
+		<h4> En esta pantalla puedes editar el estatus de los tickets, no es posible borrarlos para mantener un buen historial. </h4>
 	</div>
 
 	<!-- Tickets -->
-	<div class="tb-tickets">
-		<table id="tickets">
+	<div class="tb-tickets p-3 mb-2 bg-info bg-gradient text-black">
+		<table id="tickets" class="cell-border compact stripe display">
 			<thead>
 				<tr>
 					<th>Tramitante</th>

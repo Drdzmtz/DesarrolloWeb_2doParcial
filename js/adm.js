@@ -41,14 +41,35 @@ window.addEventListener('load', () => {
 			{ data: 'level'     },
 			{ data: 'city'      },
 			{ data: 'subject'   },
-			{ data: 'status'   },
+			{ data: 'status'    },
 			{ data: 'options'   },
 		],
 		language: {
-
+			"decimal":        "",
+    		"emptyTable":     "No se encontraron datos en esta tabla",
+    		"info":           "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+    		"infoEmpty":      "Mostrando 0 a 0 de 0 entradas",
+    		"infoFiltered":   "(filtered from _MAX_ total entries)",
+    		"infoPostFix":    "",
+    		"thousands":      ",",
+    		"lengthMenu":     "Mostrando _MENU_ entradas",
+    		"loadingRecords": "Cargando...",
+    		"processing":     "Procesando...",
+    		"search":         "Buscar:",
+    		"zeroRecords":    "No se encontraron coincidencias",
+    		"paginate": {
+        		"first":      "Primero",
+        		"last":       "Ultimo",
+        		"next":       "Siguiente",
+        		"previous":   "Anterior"
+    		},
+    		"aria": {
+        		"sortAscending":  ": Activar para ordenar la columna de forma ascendente",
+        		"sortDescending": ": Activar para ordenar la columna de forma descendente",
+			},
 		},
+		responsive: true,
 	});
-
 });
 
 const reload = () =>
