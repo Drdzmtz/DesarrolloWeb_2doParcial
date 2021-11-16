@@ -2,6 +2,7 @@
 window.addEventListener('load', () => {
 	$('#tickets').DataTable({
 		searching: true,
+		order: [[ 0, 'desc' ]],
 		ajax: {
 			url: '../controllers/get_tickets.php',
 			dataSrc: dt => {
@@ -29,7 +30,11 @@ window.addEventListener('load', () => {
 			document.querySelectorAll('.btn-update').forEach(e => e.addEventListener('click', changeStatusAction));
 			document.querySelectorAll('.btn-remove').forEach(e => e.addEventListener('click', changeStatusAction));
 		},
+		createdRow: (row, data) => {
+			row.dataset.status = data.status;
+		},
 		columns: [
+			{ data: 'id'        },
 			{ data: 'tname'     },
 			{ data: 'CURP'      },
 			{ data: 'name'      },
@@ -52,7 +57,7 @@ window.addEventListener('load', () => {
     		"infoFiltered":   "(filtered from _MAX_ total entries)",
     		"infoPostFix":    "",
     		"thousands":      ",",
-    		"lengthMenu":     "Mostrando _MENU_ entradas",
+    		"lengthMenu":     "",
     		"loadingRecords": "Cargando...",
     		"processing":     "Procesando...",
     		"search":         "Buscar:",
@@ -70,6 +75,12 @@ window.addEventListener('load', () => {
 		},
 		responsive: true,
 	});
+
+	// --- FILTERS ---
+	document.getElementById('ftr-all').addEventListener('click', filterAction);
+	document.getElementById('ftr-sa').addEventListener('click', filterAction);
+	document.getElementById('ftr-at').addEventListener('click', filterAction);
+	document.getElementById('ftr-cc').addEventListener('click', filterAction);
 });
 
 const reload = () =>
@@ -99,3 +110,12 @@ const changeStatusAction = ev => {
 		}
 	});
 };
+
+const filterAction = (ev) => {
+	const params = (ev.target.dataset.status) ? `?ft-status=${encodeURIComponent(ev.target.dataset.status)}` : '';
+
+	$('#tickets').DataTable().ajax.url(`../controllers/get_tickets.php${params}`).load();
+
+	document.querySelector('.selected').classList.remove('selected');
+	ev.target.classList.add('selected');
+}
