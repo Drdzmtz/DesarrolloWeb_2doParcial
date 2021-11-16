@@ -32,7 +32,7 @@ $r = $db->update(new Ticket(
 	getData("f-level"),
 	getData("f-city"),
 	getData("f-subj"),
-	getData("f-status")
+	getData("f-status"),
 ));
 
 if(gettype($r) === "string")

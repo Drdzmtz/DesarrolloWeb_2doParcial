@@ -15,7 +15,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" defer></script>
 	
-	<script type="module" src="../js/index.js" defer></script>
+	<script type="module" src="../js/ticket.js" defer></script>
 </head>
 <body>
 
@@ -23,11 +23,73 @@
 		<h1> Ticket de Turno</h1>
 	</div>
 
+<<<<<<< HEAD
 	<?php include_once("../views/navbar.php"); ?>
 
 	<!-- Formulario -->
 	<div>
 	<form id="data" method="post" class="hidden">
+=======
+	<div class="tb-filters">
+		<label>¿Ya cuentas con un turno? Consúltalo aquí</label>
+
+		<i id="btn-tfind" class="material-icons btn-tb btn-tb-blue">find_in_page</i>
+	</div>
+
+	<!-- Tickets -->
+	<div id="tb-tickets" class="tb-tickets hidden">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 text-center">
+					<div class="f-group f-group-3">
+						<label for="tbs-turn" class="f-label">Turno</label>
+						<input type="number"  id="tbs-turn" name="tbs-turn" class="f-input">
+					</div>
+
+					<div class="f-group f-group-3">
+						<label for="tbs-curp" class="f-label">CURP</label>
+						<input type="text"    id="tbs-curp" name="tbs-curp" class="f-input">
+					</div>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 10px">
+				<div class="col-12">
+					<div class="tb-filters">
+						<label>Buscar</label>
+						<i id="btn-tfinds" class="material-icons btn-tb btn-tb-blue">search</i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<table id="tickets">
+			<thead>
+				<tr>
+					<th>Tramitante</th>
+					<th>CURP</th>
+					<th>Nombre</th>
+					<th>A. Paterno</th>
+					<th>A. Materno</th>
+					<th>Teléfono</th>
+					<th>Celular</th>
+					<th>Correo</th>
+					<th>Nivel</th>
+					<th>Ciudad</th>
+					<th>Asunto</th>
+					<th>Estatus</th>
+					<th>Opciones</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<!-- Formulario -->
+	<form id="data" method="post">
+		<hr>
+
+>>>>>>> f-gui-ticket
 		<div class="f-group">
 			<label for="f-tname" class="rojo">Nombre completo de quien realizará el trámite:</label>
 			<input type="text" id="f-tname" name="f-tname" autofocus>
@@ -97,7 +159,7 @@
 			</select>
 		</div>
 
-		<button class="btn btn-ss" type="submit">Generar Turno</button>
+		<button class="btn btn-ss" type="submit">Guardar</button>
 
 		<div class="img-group">
 			<img src="../images/cbarras.png" alt="Código de barras">
@@ -105,8 +167,8 @@
 		</div>
 
 		<input type="hidden" id="f-id" value="">
-
 	</form>
+<<<<<<< HEAD
 
 	</div>
 	
@@ -135,5 +197,7 @@
 			<tbody></tbody>
 		</table>
 	</div>
+=======
+>>>>>>> f-gui-ticket
 </body>
 </html>
