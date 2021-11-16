@@ -91,6 +91,33 @@ window.addEventListener('load', () => {
 				alert(error);
 			}
 		});
+
+		if (!res_ticket.error){
+			$.ajax({
+				url: `../controllers/get_pdf.php`,
+				type: 'POST',
+				async: true,
+				data: {
+					'f-id': id,
+					'f-status': "Sin Atender",
+					...get_data()
+				},
+				success(res) {
+					const r = JSON.parse(res);
+	
+					if (r.error)
+						alert(r.error);
+	
+					reload();
+				},
+				error(xhr, status, error) {
+	
+					alert(error);
+				}
+			});
+	
+		}
+
 	});
 
 	document.getElementById('btn-add').addEventListener('click', ev => {
