@@ -18,7 +18,7 @@ const is_blank = (n, c, v) =>
 	!v.trim() ? `El campo ${n} se encuentra vacío\n` : "";
 
 const is_email = (n, c, v) =>
-	try_match(v, /^\w+@\w+(?:\.\w+)+$/, `El campo ${n} no tiene un email válido`);
+	try_match(v, /^[\w\d._-]+@\w+(?:\.\w+)+$/, `El campo ${n} no tiene un email válido`);
 
 const is_phone = (n, c, v) =>
 	try_match(v, /^\d{10}$/, `El campo ${n} no tiene un número de telefono válido`);
